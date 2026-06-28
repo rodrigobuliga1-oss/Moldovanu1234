@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moldovanu' Barber | Arbore, Suceava</title>
+    <style>
+        :root {
+            --primary: #0f0f11;
+            --accent: #c5a059; /* Auriu mat elegant */
+            --light: #f4f4f6;
+            --gray: #8e8e93;
+            --text-light: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--primary);
+            line-height: 1.6;
+        }
+
+        /* Navigație */
+        header {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Zona Hero */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://unsplash.com') no-repeat center center/cover;
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 44px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #d1d1d6;
+        }
+
+        /* Butonul Auriu Premium */
+        .btn-auriu {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+            color: #000000;
+            padding: 16px 36px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid #b3904b;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-auriu:hover {
+            background: linear-gradient(135deg, #ffe066 0%, #d4af37 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Secțiuni */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+            margin: 10px auto 0;
+        }
+
+        /* Prezentare Imagine Oficială */
+        .image-showcase {
+            max-width: 450px;
+            margin: 0 auto 30px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 3px solid var(--accent);
+        }
+
+        .image-showcase img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .center-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 10px 24px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        /* Servicii & Prețuri */
+        .services-container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #e5e5ea;
+            padding: 15px 0;
+            font-size: 17px;
+        }
+
+        .service-item:last-child {
+            border-bottom: none;
+        }
+
+        .service-price {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Despre & Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .info-box {
+            background: var(--primary);
+            color: var(--text-light);
+            padding: 35px;
+            border-radius: 8px;
+            border-top: 4px solid var(--accent);
+        }
+
+        .info-box h3 {
+            margin-bottom: 15px;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        .info-box p {
+            margin-bottom: 10px;
+            color: #d1d1d6;
+        }
+
+        .schedule-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #2c2c2e;
+            padding-bottom: 5px;
+        }
+
+        /* Subsol */
+        footer {
+            background-color: #0b0b0c;
+            color: #8e8e93;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+            border-top: 1px solid #1c1c1e;
+        }
+
+        /* Responsivitate */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            nav a { margin: 0 10px; font-size: 15px; }
+            .info-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 30px; }
+            section { padding: 50px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Meniu principal -->
+    <header>
+        <div class="logo">MOLDOVANU<span> BARBER</span></div>
+        <nav>
+            <a href="#prezentare">Prezentare</a>
+            <a href="#servicii">Prețuri</a>
+            <a href="#detalii">Contact & Program</a>
+        </nav>
+    </header>
+
+    <!-- Zona Hero -->
+    <section class="hero">
+        <h1>MOLDOVANU' BARBER ARBORE</h1>
+        <p>Detalii tuns • bărbierit • aranjat. Frizerie de top în județul Suceava.</p>
+        <a href="#detalii" class="btn-auriu">Programează o vizită</a>
+    </section>
+
+    <!-- Secțiunea Prezentare -->
+    <section id="prezentare">
+        <h2 class="section-title">Prezentare</h2>
+        <div class="image-showcase">
+            <img src="https://scontent.fias1-1.fna.fbcdn.net/v/t39.30808-6/642212082_900904209365264_3094892464053592095_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s1080x1920&_nc_cat=103&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=kNW5CjzFCsMQ7kNvwE423Rp&_nc_oc=AdoffEhlVgK1J6AGpWsiKs2I0vLpfjF452XJFQLs-r_uWjsxBaB79e4ZlZ4y1PlTerM&_nc_zt=23&_nc_ht=scontent.fias1-1.fna&_nc_gid=bYK54Oum3rHcbaZgOu9RaA&_nc_ss=7b289&oh=00_Af-ZR4vhSRnzSjVDH0F9AqlsBT1jzrWPUGZVbUfkIpmmTw&oe=6A46FAC7" alt="Moldovanu Barber Exterior">
+        </div>
+        <div class="center-btn">
+            <a href="https://facebook.com" target="_blank" class="btn-secondary">Vizitează Pagina de Facebook</a>
+        </div>
+    </section>
+
+    <!-- Secțiunea Servicii & Prețuri -->
+    <section id="servicii" style="background-color: #ebebeb;">
+        <h2 class="section-title">Servicii & Prețuri</h2>
+        <div class="services-container">
+            <div class="service-item">
+                <span>Tuns Clasic / Modern</span>
+                <span class="service-price">50 RON</span>
+            </div>
+            <div class="service-item">
+                <span>Tuns Barbă + Contur</span>
+                <span class="service-price">30 RON</span>
+            </div>
+            <div class="service-item">
+                <span>Pachet Complet (Tuns + Barbă)</span>
+                <span class="service-price">70 RON</span>
+            </div>
+            <div class="service-item">
+                <span>Spălat + Styling</span>
+                <span class="service-price">20 RON</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secțiunea Detalii (Contact & Program) -->
+    <section id="detalii">
+        <h2 class="section-title">Program</h2>
+        <div class="info-grid">
+            <!-- Box Program -->
+            <div class="info-box">
+                <h3>Orar Funcționare</h3>
+                <div class="schedule-row">
+                    <span>Luni - Vineri</span>
+                    <span>09:00 - 19:00</span>
+                </div>
+                <div class="schedule-row">
+                    <span>Sâmbătă</span>
+                    <span>09:00 - 14:00</span>
+                </div>
+                <div class="schedule-row">
+                    <span>Duminică</span>
+                    <span>Închis</span>
+                </div>
+            </div>
+            <!-- Box Contact -->
+            <div class="info-box">
+               
+                <!-- Secțiunea Detalii (Contact & Program) -->
+    <section id="detalii">
+        <h2 class="section-title">Contact & Locație</h2>
+        <div class="info-grid">
+            
+                
+                
+            </div>
+            <!-- Box Contact -->
+            <div class="info-box">
+                
+                <p><strong>Adresă:</strong> Arbore, nr. 1296, jud. Suceava, România (Cod poștal: 727015)</p>
+                <p><strong>Telefon:</strong> <a href="tel:+40755569281" style="color: var(--accent); text-decoration: none;">+40 755 569 281</a></p>
+                <p><strong>Instagram:</strong> <a href="https://instagram.com" target="_blank" style="color: var(--text-light); text-decoration: underline;">@moldovanu_barber</a></p>
+                <p><strong>Facebook:</strong> <a href="https://www.facebook.com/p/Moldovanu-Barber-100083370790981/" target="_blank" style="color: var(--text-light); text-decoration: underline;">Moldovanu' Barber Arbore</a></p>
+            </div>
+        </div>
+    </section></h3>
